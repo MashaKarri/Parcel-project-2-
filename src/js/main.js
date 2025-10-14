@@ -5,7 +5,5 @@ const numbers = [1, 2, 3, 4, 5];
 const avg = average(numbers);
 console.log(`Average: ${avg}`);
 
-
-const numbers2 = [1, 2, 3, 4, 5];
-const result = sum(numbers2);
+const result = sum(numbers);
 console.log(`Sum: ${result}`);
