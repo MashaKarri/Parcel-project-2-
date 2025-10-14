@@ -775,6 +775,8 @@ var _average = require("./average");
 var _averageDefault = parcelHelpers.interopDefault(_average);
 var _sum = require("./sum");
 var _sumDefault = parcelHelpers.interopDefault(_sum);
+var _stringToArrayJs = require("./string-to-array.js");
+var _stringToArrayJsDefault = parcelHelpers.interopDefault(_stringToArrayJs);
 const numbers = [
     1,
     2,
@@ -784,16 +786,22 @@ const numbers = [
 ];
 const avg = (0, _averageDefault.default)(numbers);
 console.log(`Average: ${avg}`);
-const numbers2 = [
-    1,
-    2,
-    3,
-    4,
-    5
-];
-const result = (0, _sumDefault.default)(numbers2);
+const result = (0, _sumDefault.default)(numbers);
 console.log(`Sum: ${result}`);
+const str = 'one,two,three,four,five';
+const separator = ',';
+const result2 = (0, _stringToArrayJsDefault.default)(str, separator);
+console.log(`Result: ${result2}`);
 
-},{"./average":"1zqLA","./sum":"5MWrh","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequire3a75", {})
+},{"./average":"1zqLA","./sum":"5MWrh","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","./string-to-array.js":"cVp6J"}],"cVp6J":[function(require,module,exports,__globalThis) {
+// який містить функцію для перетворення рядка в масив за допомогою певного роздільника.
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>stringToArray);
+function stringToArray(str, separator) {
+    return str.split(separator);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequire3a75", {})
 
 //# sourceMappingURL=Parcel-project-2-.31b563d9.js.map
