@@ -1,5 +1,10 @@
+import "./js/main.js";
 import "./js/average.js";
 import "./js/sum.js";
 import "./js/string-to-array";
 import "./js/max.js";
-import "./js/main.js";
+import "./js/calculator/addition.js";
+import "./js/calculator/division.js";
+import "./js/calculator/multiplication.js";
+import "./js/calculator/subtraction.js";
+import "./js/calculator/result.js";
