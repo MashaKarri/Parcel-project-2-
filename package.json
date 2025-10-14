@@ -1,0 +1,25 @@
+{
+  "name": "parcel-project-2-",
+  "version": "1.0.0",
+  "description": "parcel-project-2",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/*.html --no-cache --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MashaKarri/Parcel-project-2-.git"
+  },
+  "author": "Mariya Dovgalyuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MashaKarri/Parcel-project-2-/issues"
+  },
+  "homepage": "https://github.com/MashaKarri/Parcel-project-2-#readme",
+  "dependencies": {
+    "gh-pages": "^6.3.0",
+    "parcel": "^2.16.0"
+  }
+}
