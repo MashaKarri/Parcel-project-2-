@@ -7,4 +7,4 @@ function average(numbers) {
     return average;
 }
 
-export default average
+export default average // Дефолтний експорт

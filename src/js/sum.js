@@ -4,4 +4,6 @@ function sum(numbers) {
     return numbers.reduce((acc, num) => acc + num, 0);
 }
 
-export default sum
+export default sum // Дефолтний експорт
+
+// Дефолтний експорт використовуємо коли треба експортувати одну сутність з файла
