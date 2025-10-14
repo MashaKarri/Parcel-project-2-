@@ -714,26 +714,65 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"a0t4e":[function(require,module,exports,__globalThis) {
+var _mainJs = require("./js/main.js");
 var _averageJs = require("./js/average.js");
 var _sumJs = require("./js/sum.js");
 var _stringToArray = require("./js/string-to-array");
 var _maxJs = require("./js/max.js");
-var _mainJs = require("./js/main.js");
+var _additionJs = require("./js/calculator/addition.js");
+var _divisionJs = require("./js/calculator/division.js");
+var _multiplicationJs = require("./js/calculator/multiplication.js");
+var _subtractionJs = require("./js/calculator/subtraction.js");
+var _resultJs = require("./js/calculator/result.js");
 
-},{"./js/average.js":"1zqLA","./js/sum.js":"5MWrh","./js/string-to-array":"cVp6J","./js/max.js":"2EnVC","./js/main.js":"lhpGb"}],"1zqLA":[function(require,module,exports,__globalThis) {
-// Створіть модуль 
-// який містить функцію для знаходження середнього значення масиву чисел.
+},{"./js/main.js":"lhpGb","./js/average.js":"1zqLA","./js/sum.js":"5MWrh","./js/string-to-array":"cVp6J","./js/max.js":"2EnVC","./js/calculator/addition.js":"fnEl3","./js/calculator/division.js":"f9c1l","./js/calculator/multiplication.js":"1kLoj","./js/calculator/subtraction.js":"9KhpR","./js/calculator/result.js":"6xC7S"}],"lhpGb":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function average(numbers) {
-    const sum = numbers.reduce((acc, number)=>acc + number, 0);
-    const average = sum / numbers.length;
-    return average;
-}
-exports.default = average // Дефолтний експорт
-;
+var _averageJs = require("./average.js"); // Дефолтний імпорт прописується без фігурних дужок
+var _averageJsDefault = parcelHelpers.interopDefault(_averageJs);
+var _sumJs = require("./sum.js"); // Дефолтний імпорт прописується без фігурних дужок
+var _sumJsDefault = parcelHelpers.interopDefault(_sumJs);
+var _stringToArrayJs = require("./string-to-array.js"); // Іменований імпорт
+var _maxJs = require("./max.js");
+var _maxJsDefault = parcelHelpers.interopDefault(_maxJs);
+var _additionJs = require("./calculator/addition.js");
+var _additionJsDefault = parcelHelpers.interopDefault(_additionJs);
+var _subtractionJs = require("./calculator/subtraction.js");
+var _subtractionJsDefault = parcelHelpers.interopDefault(_subtractionJs);
+var _multiplicationJs = require("./calculator/multiplication.js");
+var _multiplicationJsDefault = parcelHelpers.interopDefault(_multiplicationJs);
+var _divisionJs = require("./calculator/division.js");
+var _divisionJsDefault = parcelHelpers.interopDefault(_divisionJs);
+var _resultJs = require("./calculator/result.js");
+var _resultJsDefault = parcelHelpers.interopDefault(_resultJs);
+const numbers = [
+    1,
+    2,
+    3,
+    4,
+    5
+];
+const avg = (0, _averageJsDefault.default)(numbers);
+console.log(`Average: ${avg}`);
+const result = (0, _sumJsDefault.default)(numbers);
+console.log(`Sum: ${result}`);
+const str = "one,two,three,four,five";
+const separator = ",";
+const result2 = (0, _stringToArrayJs.stringToArray)(str, separator);
+console.log(`Result: ${result2}`);
+const result3 = (0, _maxJsDefault.default)(numbers);
+console.log(`Max: ${result3}`);
+let a = 10;
+let b = 5;
+let sum = (0, _additionJsDefault.default)(a, b);
+let difference = (0, _subtractionJsDefault.default)(a, b);
+let product = (0, _multiplicationJsDefault.default)(a, b);
+let quotient = (0, _divisionJsDefault.default)(a, b);
+(0, _resultJsDefault.default)(sum);
+(0, _resultJsDefault.default)(difference);
+(0, _resultJsDefault.default)(product);
+(0, _resultJsDefault.default)(quotient);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"jnFvT":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","./string-to-array.js":"cVp6J","./max.js":"2EnVC","./calculator/subtraction.js":"9KhpR","./calculator/multiplication.js":"1kLoj","./calculator/division.js":"f9c1l","./calculator/result.js":"6xC7S","./calculator/addition.js":"fnEl3","./average.js":"1zqLA","./sum.js":"5MWrh"}],"jnFvT":[function(require,module,exports,__globalThis) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -763,18 +802,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"5MWrh":[function(require,module,exports,__globalThis) {
-// який містить функцію для знаходження суми елементів масиву чисел.
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function sum(numbers) {
-    return numbers.reduce((acc, num)=>acc + num, 0);
-}
-exports.default = sum // Дефолтний експорт
- // Дефолтний експорт використовуємо коли треба експортувати одну сутність з файла
-;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"cVp6J":[function(require,module,exports,__globalThis) {
+},{}],"cVp6J":[function(require,module,exports,__globalThis) {
 // який містить функцію для перетворення рядка в масив за допомогою певного роздільника.
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -798,33 +826,70 @@ function max(numbers) {
 }
 exports.default = max;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"lhpGb":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"9KhpR":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _average = require("./average"); // Дефолтний імпорт прописується без фігурних дужок
-var _averageDefault = parcelHelpers.interopDefault(_average);
-var _sum = require("./sum"); // Дефолтний імпорт прописується без фігурних дужок
-var _sumDefault = parcelHelpers.interopDefault(_sum);
-var _stringToArrayJs = require("./string-to-array.js"); // Іменований імпорт
-var _maxJs = require("./max.js");
-var _maxJsDefault = parcelHelpers.interopDefault(_maxJs);
-const numbers = [
-    1,
-    2,
-    3,
-    4,
-    5
-];
-const avg = (0, _averageDefault.default)(numbers);
-console.log(`Average: ${avg}`);
-const result = (0, _sumDefault.default)(numbers);
-console.log(`Sum: ${result}`);
-const str = "one,two,three,four,five";
-const separator = ",";
-const result2 = (0, _stringToArrayJs.stringToArray)(str, separator);
-console.log(`Result: ${result2}`);
-const result3 = (0, _maxJsDefault.default)(numbers);
-console.log(`Max: ${result3}`);
+parcelHelpers.defineInteropFlag(exports);
+function subtract(a, b) {
+    return a - b;
+}
+exports.default = subtract;
 
-},{"./average":"1zqLA","./sum":"5MWrh","./string-to-array.js":"cVp6J","./max.js":"2EnVC","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequire3a75", {})
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"1kLoj":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function multiply(a, b) {
+    return a * b;
+}
+exports.default = multiply;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"f9c1l":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function divide(a, b) {
+    return a / b;
+}
+exports.default = divide;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"6xC7S":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function printResult(result) {
+    console.log(result);
+}
+exports.default = printResult;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"fnEl3":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function add(a, b) {
+    return a + b;
+}
+exports.default = add;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"1zqLA":[function(require,module,exports,__globalThis) {
+// Створіть модуль 
+// який містить функцію для знаходження середнього значення масиву чисел.
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function average(numbers) {
+    const sum = numbers.reduce((acc, number)=>acc + number, 0);
+    const average = sum / numbers.length;
+    return average;
+}
+exports.default = average // Дефолтний експорт
+;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"5MWrh":[function(require,module,exports,__globalThis) {
+// який містить функцію для знаходження суми елементів масиву чисел.
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function sumNum(numbers) {
+    const sum = numbers.reduce((acc, num)=>acc + num, 0);
+    return sum;
+}
+exports.default = sumNum; // Дефолтний експорт
+ // Дефолтний експорт використовуємо коли треба експортувати одну сутність з файла
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequire3a75", {})
 
 //# sourceMappingURL=Parcel-project-2-.31b563d9.js.map
